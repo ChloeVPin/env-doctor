@@ -1,0 +1,9 @@
+test/
+.github/
+coverage/
+.gitignore
+.env
+.env.*
+*.log
+.DS_Store
+Thumbs.db

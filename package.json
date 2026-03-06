@@ -1,0 +1,37 @@
+{
+  "name": "env-doctor",
+  "version": "1.0.0",
+  "description": "Zero-config CLI to compare your .env against .env.example and find missing, extra, or empty variables.",
+  "type": "module",
+  "main": "./src/index.js",
+  "bin": {
+    "env-doctor": "./bin/env-doctor.js"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.js"
+  },
+  "keywords": [
+    "env",
+    "dotenv",
+    "environment",
+    "cli",
+    "developer-tools",
+    "devtools",
+    "config",
+    "validation",
+    "dx"
+  ],
+  "engines": {
+    "node": ">=16"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^5.6.2",
+    "commander": "^14.0.3"
+  },
+  "devDependencies": {
+    "@jest/globals": "^30.2.0",
+    "jest": "^30.2.0"
+  }
+}
