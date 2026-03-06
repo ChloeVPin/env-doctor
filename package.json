@@ -1,25 +1,36 @@
 {
-  "name": "env-doctor",
+  "name": "env-clinic",
   "version": "1.0.0",
-  "description": "Zero-config CLI to compare your .env against .env.example. Finds missing, extra, or empty variables instantly.",
+  "description": "Zero-config CLI to find missing, extra, and empty variables in your .env file",
   "type": "module",
   "main": "./src/index.js",
   "bin": {
-    "env-doctor": "./bin/env-doctor.js"
+    "env-clinic": "bin/env-clinic.js"
   },
+  "files": [
+    "bin",
+    "src",
+    "assets",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
   "scripts": {
     "test": "node --test test/*.test.js"
   },
   "keywords": [
-    "env",
-    "dotenv",
-    "environment",
     "cli",
+    "nodejs",
+    "dotenv",
+    "env",
+    "environment-variables",
     "developer-tools",
     "devtools",
-    "config",
-    "validation",
-    "dx"
+    "dx",
+    "npm",
+    "open-source",
+    "configuration",
+    "validation"
   ],
   "engines": {
     "node": ">=16"
@@ -28,12 +39,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ChloeVPin/env-doctor.git"
+    "url": "git+https://github.com/ChloeVPin/env-clinic.git"
   },
   "bugs": {
-    "url": "https://github.com/ChloeVPin/env-doctor/issues"
+    "url": "https://github.com/ChloeVPin/env-clinic/issues"
   },
-  "homepage": "https://github.com/ChloeVPin/env-doctor#readme",
+  "homepage": "https://github.com/ChloeVPin/env-clinic#readme",
   "dependencies": {
     "chalk": "^5.6.2",
     "commander": "^14.0.3"

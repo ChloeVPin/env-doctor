@@ -28,7 +28,7 @@ export async function fixMissing(missingKeys, envPath) {
         });
 
     console.log('');
-    console.log('  🩺 env-doctor --fix');
+    console.log('  🩺 env-clinic --fix');
     console.log('  Fill in missing variables (press Enter to leave blank):');
     console.log('');
 
@@ -43,7 +43,7 @@ export async function fixMissing(missingKeys, envPath) {
     rl.close();
 
     // Append to .env with a comment header
-    const block = `\n# Added by env-doctor on ${date}\n${entries.join('\n')}\n`;
+    const block = `\n# Added by env-clinic on ${date}\n${entries.join('\n')}\n`;
     appendFileSync(envPath, block, 'utf-8');
 
     console.log('');

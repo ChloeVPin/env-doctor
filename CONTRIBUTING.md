@@ -1,19 +1,19 @@
-# Contributing to env-doctor
+# Contributing to env-clinic
 
-First off, thank you for considering contributing to `env-doctor`! It's people like you that make open source such a fantastic community to learn, inspire, and create.
+First off, thank you for considering contributing to `env-clinic`! It's people like you that make open source such a fantastic community to learn, inspire, and create.
 
 ## 🐛 Found a Bug?
-If you find a bug in the source code, you can help us by [submitting an issue](https://github.com/ChloeVPin/env-doctor/issues). Even better, you can [submit a Pull Request](https://github.com/ChloeVPin/env-doctor/pulls) with a fix.
+If you find a bug in the source code, you can help us by [submitting an issue](https://github.com/ChloeVPin/env-clinic/issues). Even better, you can [submit a Pull Request](https://github.com/ChloeVPin/env-clinic/pulls) with a fix.
 
 ## 💡 Have an Idea?
-We love new ideas! However, `env-doctor` is designed to be a focused, zero-config tool that solves exactly one problem perfectly. Before submitting a PR for a major new feature, please [open an issue](https://github.com/ChloeVPin/env-doctor/issues) or start a discussion so we can talk about it first.
+We love new ideas! However, `env-clinic` is designed to be a focused, zero-config tool that solves exactly one problem perfectly. Before submitting a PR for a major new feature, please [open an issue](https://github.com/ChloeVPin/env-clinic/issues) or start a discussion so we can talk about it first.
 
 ## 🛠️ Development Setup
 
 1. Fork the repo and clone your fork:
    ```bash
-   git clone https://github.com/ChloeVPin/env-doctor.git
-   cd env-doctor
+   git clone https://github.com/ChloeVPin/env-clinic.git
+   cd env-clinic
    ```
 2. Install dependencies:
    ```bash

@@ -18,8 +18,8 @@ const pkg = JSON.parse(readFileSync(resolve(__dirname, '..', 'package.json'), 'u
 const program = new Command();
 
 program
-    .name('env-doctor')
-    .description('Zero-config CLI to compare your .env against .env.example and find missing, extra, or empty variables.')
+    .name('env-clinic')
+    .description('Zero-config CLI to find missing, extra, and empty variables in your .env file')
     .version(pkg.version, '-v, --version')
     .option('--file <path>', 'Path to the .env file (default: .env)')
     .option('--example <path>', 'Path to the reference file (default: auto-detect)')
@@ -66,7 +66,7 @@ program
         } catch (err) {
             if (!options.json) {
                 console.error('');
-                console.error(`  🩺 env-doctor error:`);
+                console.error(`  🩺 env-clinic error:`);
                 console.error(`  ${err.message}`);
                 console.error('');
             } else {

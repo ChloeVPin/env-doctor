@@ -30,31 +30,40 @@ export function printReport(result, options = {}) {
 
     // Header
     console.log('');
-    console.log(c.bold('  🩺 env-doctor'));
+    if (!options.ci) {
+        console.log(c.bold('  🩺 env-clinic'));
+    } else {
+        console.log('  env-clinic');
+    }
     console.log(c.dim('  ─────────────────────────────────'));
     console.log('');
 
     // Present variables
     if (!options.quiet) {
         for (const key of present) {
-            console.log(`  ${c.green('✅')} ${c.white(key)}  ${c.dim('— present')}`);
+            const icon = options.ci ? '[PASS]' : c.green('✅');
+            console.log(`  ${icon} ${c.white(key)}  ${c.dim('— present')}`);
         }
     }
 
     // Missing variables
     for (const key of missing) {
-        console.log(`  ${c.red('❌')} ${c.white(key)}  ${c.red('— MISSING')} ${c.dim('(in example but not in .env)')}`);
+        const icon = options.ci ? '[FAIL]' : c.red('❌');
+        console.log(`  ${icon} ${c.white(key)}  ${c.red('— MISSING')} ${c.dim('(in example but not in .env)')}`);
     }
 
     // Extra variables
     for (const key of extra) {
-        console.log(`  ${c.yellow('⚠️')}  ${c.white(key)}  ${c.yellow('— EXTRA')} ${c.dim('(in .env but not in example)')}`);
+        const icon = options.ci ? '[WARN]' : c.yellow('⚠️');
+        console.log(`  ${icon}  ${c.white(key)}  ${c.yellow('— EXTRA')} ${c.dim('(in .env but not in example)')}`);
     }
 
     // Empty variables
     for (const key of empty) {
         const label = options.strict ? c.red('— EMPTY (strict mode: treated as error)') : c.yellow('— EMPTY (present but has no value)');
-        const icon = options.strict ? c.red('❌') : c.yellow('⚠️');
+        const icon = options.ci
+            ? (options.strict ? '[FAIL]' : '[WARN]')
+            : (options.strict ? c.red('❌') : c.yellow('⚠️'));
         console.log(`  ${icon}  ${c.white(key)}  ${label}`);
     }
 
@@ -64,22 +73,28 @@ export function printReport(result, options = {}) {
     console.log(c.bold('  Summary:'));
 
     if (present.length > 0) {
-        console.log(`  ${c.green('✅')} ${present.length} variable${present.length === 1 ? '' : 's'} present`);
+        const icon = options.ci ? '[PASS]' : c.green('✅');
+        console.log(`  ${icon} ${present.length} variable${present.length === 1 ? '' : 's'} present`);
     }
     if (missing.length > 0) {
-        console.log(`  ${c.red('❌')} ${missing.length} variable${missing.length === 1 ? '' : 's'} missing`);
+        const icon = options.ci ? '[FAIL]' : c.red('❌');
+        console.log(`  ${icon} ${missing.length} variable${missing.length === 1 ? '' : 's'} missing`);
     }
     if (extra.length > 0) {
-        console.log(`  ${c.yellow('⚠️')}  ${extra.length} extra variable${extra.length === 1 ? '' : 's'} (may be safe to remove)`);
+        const icon = options.ci ? '[WARN]' : c.yellow('⚠️');
+        console.log(`  ${icon}  ${extra.length} extra variable${extra.length === 1 ? '' : 's'} (may be safe to remove)`);
     }
     if (empty.length > 0) {
         const emptyLabel = options.strict ? 'empty (treated as error)' : 'empty (present but has no value)';
-        const emptyIcon = options.strict ? c.red('❌') : c.yellow('⚠️');
+        const emptyIcon = options.ci
+            ? (options.strict ? '[FAIL]' : '[WARN]')
+            : (options.strict ? c.red('❌') : c.yellow('⚠️'));
         console.log(`  ${emptyIcon}  ${empty.length} ${emptyLabel}`);
     }
 
     if (missing.length === 0 && extra.length === 0 && empty.length === 0) {
-        console.log(`  ${c.green('✅')} All variables match — your .env is healthy!`);
+        const icon = options.ci ? '[PASS]' : c.green('✅');
+        console.log(`  ${icon} All variables match — your .env is healthy!`);
     }
 
     console.log('');

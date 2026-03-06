@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.0.0] - 2026-03-06
 
 ### Added
-- Initial release of `env-doctor`.
+- Initial release of `env-clinic`.
 - Zero-config `.env` vs `.env.example` comparison.
 - Interactive `--fix` mode to safely append missing variables.
 - Strict, CI, quiet, and JSON output modes.
