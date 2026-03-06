@@ -1,7 +1,7 @@
 {
   "name": "env-doctor",
   "version": "1.0.0",
-  "description": "🩺 Zero-config CLI to compare your .env against .env.example. Finds missing, extra, or empty variables instantly.",
+  "description": "Zero-config CLI to compare your .env against .env.example. Finds missing, extra, or empty variables instantly.",
   "type": "module",
   "main": "./src/index.js",
   "bin": {

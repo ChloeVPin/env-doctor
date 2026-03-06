@@ -19,7 +19,7 @@ const program = new Command();
 
 program
     .name('env-doctor')
-    .description('🩺 Zero-config CLI to compare your .env against .env.example and find missing, extra, or empty variables.')
+    .description('Zero-config CLI to compare your .env against .env.example and find missing, extra, or empty variables.')
     .version(pkg.version, '-v, --version')
     .option('--file <path>', 'Path to the .env file (default: .env)')
     .option('--example <path>', 'Path to the reference file (default: auto-detect)')
